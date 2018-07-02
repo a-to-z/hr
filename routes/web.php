@@ -15,17 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/list', 'employeesController@index')->name('list');
 
-Route::get('/kek', function (){
-   echo "<pre>";
-   var_dump(\App\employees::select('emp_no')->where([['emp_no','>',90000],['active_emp','Y']])->get());
-   echo "</pre>";
+Auth::routes();
+
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/leaves','leavesController@index')->name('leaves');
+    Route::get('/leaves/details','leavesController@details')->name('details');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/list', 'employeesController@index')->name('list');
+
 });
+
 
 Route::get('/info', function (){
     phpinfo();
 });
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
