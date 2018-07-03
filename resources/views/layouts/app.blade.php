@@ -54,6 +54,9 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{url('/leaves')}}">Leaves Summary</a></li>
+
+                                    <li><a href="{{url('/leaves/details')}}">Leaves Details</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
