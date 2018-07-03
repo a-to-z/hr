@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="icon" href="./favicon.ico" type="image/ico">
+        <link rel="icon" href="{{ url('/favicon.ico') }}" type="image/ico">
 
         <title>MyGerrys HRMS</title>
 
